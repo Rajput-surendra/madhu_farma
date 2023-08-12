@@ -15,13 +15,13 @@ class BreedScreen extends StatefulWidget {
 class _BreedScreenState extends State<BreedScreen> {
 
   List<Map<String, dynamic>> BreedList = [
-    {"image_path": 'assets/images/img.png', 'title': 'Osmanabadi','type': 'Goat'},
-    {"image_path": 'assets/images/img.png', 'title': 'Sirohi','type': 'Goat'},
-    {"image_path": 'assets/images/img.png', 'title': 'Osmanabadi','type': 'Goat'},
-    {"image_path": 'assets/images/img.png', 'title': 'Sirohi','type': 'Goat'},
-    {"image_path": 'assets/images/img.png', 'title': 'Rajasthani','type': 'Sheep'},
-    {"image_path": 'assets/images/img.png', 'title': 'Cow','type': 'Jarshi'},
-    {"image_path": 'assets/images/img.png', 'title': 'Rajasthani','type': 'Sheep'},
+    {"image_path": 'assets/images/1.png', 'title': 'Osmanabadi','type': 'Goat'},
+    {"image_path": 'assets/images/2.png', 'title': 'Sirohi','type': 'Goat'},
+    {"image_path": 'assets/images/3.png', 'title': 'Osmanabadi','type': 'Goat'},
+    {"image_path": 'assets/images/4.png', 'title': 'Sirohi','type': 'Goat'},
+    {"image_path": 'assets/images/5.png', 'title': 'Rajasthani','type': 'Sheep'},
+    {"image_path": 'assets/images/6.png', 'title': 'Cow','type': 'Jarshi'},
+    {"image_path": 'assets/images/7.png', 'title': 'Rajasthani','type': 'Sheep'},
   ];
 
   @override
@@ -38,7 +38,7 @@ class _BreedScreenState extends State<BreedScreen> {
               child: GridView.builder(
                 physics: BouncingScrollPhysics(),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  mainAxisExtent:210,
+                  mainAxisExtent:225,
                   crossAxisCount: 2, // number of items in each row
                   mainAxisSpacing: 10.0, // spacing between rows
                   crossAxisSpacing: 8.0, // spacing between columns
@@ -57,15 +57,19 @@ class _BreedScreenState extends State<BreedScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Container(
-                              child: Image.asset(BreedList[index]["image_path"],
-                                fit: BoxFit.contain,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(20),
+                                child: Image.asset(BreedList[index]["image_path"],
+                                  fit: BoxFit.contain,
+                                ),
                               ),
 
                             ),
-                            SizedBox(height: 3,),
+                             SizedBox(height: 3,),
                             Text(BreedList[index]["title"],style: TextStyle(
                               fontWeight: FontWeight.bold
                             ),),
+
                             SizedBox(height: 3,),
                             Text(BreedList[index]["type"],style: TextStyle(
                                 color:colors.black12.withOpacity(0.5)

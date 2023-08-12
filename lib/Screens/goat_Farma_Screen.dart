@@ -5,8 +5,8 @@ import 'package:madhu_farma/Helper/Colors.dart';
 
 import '../Helper/AppBtn.dart';
 import '../Helper/Appbar.dart';
-import '../Splash/madhu_farm.dart';
 import 'BreedScreen.dart';
+import 'madhu_farm.dart';
 
 class GoatFarmaScreen extends StatefulWidget {
   const GoatFarmaScreen({Key? key}) : super(key: key);
@@ -27,7 +27,7 @@ class _GoatFarmaScreenState extends State<GoatFarmaScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppBar(context: context, text:"Goat ", isTrue: true, ),
+      appBar: customAppBar(context: context, text:"Goat", isTrue: true, ),
       backgroundColor: colors.grad1Color,
       body: SingleChildScrollView(
         child: Form(
